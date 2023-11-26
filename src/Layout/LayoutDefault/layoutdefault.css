@@ -1,0 +1,46 @@
+.header__wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+}
+.header{
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(182,182,182,0.18);
+}
+.header__left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__menu ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__menu ul li{
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+
+.header__logo img{
+    width:180px;
+    padding-right: 20px;
+}
+
+.header__user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.section{
+    height: 438px;
+    width: 100%;
+    aspect-ratio: auto 1503 / 438;
+    background-image: url('https://file4.batdongsan.com.vn/Banners/HieuNM/HuongTT9/1920x560/20220321-1735/images/bg.jpg?1647858844036');
+}
+

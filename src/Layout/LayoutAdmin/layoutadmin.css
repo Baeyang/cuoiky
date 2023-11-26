@@ -1,0 +1,20 @@
+.Layout-Admin__header{
+    padding: 20px 25px;
+    background: white;
+    box-shadow: 0 2px 48px rgba(0,0,0,.1);
+    border-bottom: 1px solid #F2F2F2;
+}
+.Layout-Admin__header-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Layout-Admin__content{
+    margin: 20px 20px 0 20px;
+    background: white;
+    padding: 20px;
+}
+
+.Layout-Admin__main{
+    height: 100vh;
+}

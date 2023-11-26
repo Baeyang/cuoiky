@@ -1,0 +1,90 @@
+.DetailApartment{
+    padding: 50px 0;
+}
+
+.image__detail img{
+    height: 450px;
+    aspect-ratio: 6/4;
+}
+.image__sub img{
+    width: 150px;
+    aspect-ratio: 4/3;
+}
+
+.Seller{
+    cursor: pointer;
+    border: 1px solid #F2F2F2;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.Seller__name{
+    font-size: 16px;
+    color: #999999;
+}
+
+.Seller__name p{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: black;
+}
+.Alert{
+    border: 1px solid #F2F2F2;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Alert p{
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.title{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600 !important;
+    letter-spacing: -0.2px;
+    color: #2C2C2C;
+    display: block;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.info{
+    padding: 20px 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #F2F2F2;
+
+}
+
+.info__title{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    color: #999999;
+    display: block;
+    border-bottom: 1px solid #F2F2F2;
+}
+.info__content{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #2C2C2C;
+    margin-top: 4px;
+    
+}
+
+.description__text{
+    margin: 10px 0;
+}
