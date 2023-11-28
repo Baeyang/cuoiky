@@ -66,10 +66,26 @@ function DetailApartment() {
                             </div>
                             <div className="livingroom">
                                 <div className="info__title">
-                                    Phòng khách
+                                    Phòng khách:
                                 </div>
                                 <div className="info__content">
                                     {detail.num_living_room} phòng
+                                </div>
+                            </div>
+                            <div className="bathroom">
+                                <div className="info__title">
+                                    Phòng tắm:
+                                </div>
+                                <div className="info__content">
+                                    {detail.num_bath_room} phòng
+                                </div>
+                            </div>
+                            <div className="kitchen">
+                                <div className="info__title">
+                                    Phòng bếp:
+                                </div>
+                                <div className="info__content">
+                                    {detail.num_kitchen_room} phòng
                                 </div>
                             </div>
                         </div>

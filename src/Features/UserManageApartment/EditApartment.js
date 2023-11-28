@@ -1,87 +1,56 @@
-import { Button, Col, Form, Input, InputNumber, Row, Upload } from 'antd';
-import { jwtDecode } from "jwt-decode";
-import { addApartment } from '../../Services/api';
+import { Button, Col, Form, Input, InputNumber, Row, Upload,Modal } from 'antd';
+import {EditOutlined} from '@ant-design/icons'
 import { useState } from 'react';
+import { editApartment } from '../../Services/api';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
-
 const { TextArea } = Input;
-function SellApartment() {
-    const decoded = jwtDecode(localStorage.getItem('access_token'));
-    const [images, setImages] = useState([]);
-    const navigate = useNavigate();
-    const formData = new FormData()
-    if (images) {
-        images.forEach(element => {
-            formData.append('image[]', element)
-        });
+function EditApartment({item, onReload}){
+    console.log(item)
+    const username = localStorage.getItem('username');
+    const [isModalOpen,setIsModalOpen] = useState(false)
+    const showModal = () =>{
+        setIsModalOpen(true)
     }
-    // const handleUpload = (e) => {
-    //     const image = e.target.files[0];
-    //     setImages((prevImages) => [...prevImages, image]);
-    //   };
+    const handleCancel = () =>{
+        setIsModalOpen(false)
+    }
 
-    const normFile = (e) => {
-        if (Array.isArray(e)) {
-            return e;
-        }
-        return e && e.fileList;
-    };
-
-    const beforeUpload = (file) => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = (e) => {
-                const imageBase64 = e.target.result;
-                // Thêm trường 'base64' vào file để lưu giá trị ảnh dưới dạng base64
-                file.base64 = imageBase64;
-                setImages((prevImages) => [...prevImages, file.base64]);
-                resolve();
-            };
-            reader.onerror = (error) => {
-                reject(error);
-            };
-        });
-    };
-
-    const onPreview = (file) => {
-        const imageBase64 = file.base64;
-        window.open(imageBase64, '_blank');
-    };
-    console.log(images)
     const onFinish = async (values) => {
-        values.seller_name = decoded.sub;
-        values.images = images;
-        console.log(values);
-        const response = await addApartment(values);
+        values.id = item.id
+        values.seller_name = username
+        values.images = item.images
+        console.log(values)
+        const response = await editApartment(item.id, values);
+        if (response) {
             Swal.fire({
                 icon: 'success',
                 title: 'Success!',
                 showConfirmButton: false,
                 timer: 1500
               })
-            navigate('/');
-
+            setIsModalOpen(false)
+            onReload();
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
     }
-    const handleRemove = (removedImage) => {
-        setImages((prevImages) =>
-          prevImages.filter((image) => image !== removedImage)
-        ); // Xóa ảnh khỏi state images
-      };
-
-    return (
+    return(
         <>
-            <Form layout="vertical"
+        <Button className="ml-10"  onClick={showModal} icon={<EditOutlined />}></Button>
+        <Modal title='Chỉnh sửa' open={isModalOpen} onCancel={handleCancel} footer={null} width={650}>
+        <Form layout="vertical"
                 onFinish={onFinish}
-                initialValues={{
-                    remember: true,
-                }}
+                initialValues={item}
                 encType='multipart/form-data'
 
             >
                 <Row>
-                <Col span={12} offset={6} >
+                <Col span={18} offset={3} >
                         <Form.Item
                             label="Title:"
                             name="title"
@@ -95,7 +64,7 @@ function SellApartment() {
                             <Input />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3} >
                         <Form.Item
                             label="Address:"
                             name="address"
@@ -109,7 +78,7 @@ function SellApartment() {
                             <Input />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3}>
                         <Form.Item
                             label="Square:"
                             name="square"
@@ -123,7 +92,7 @@ function SellApartment() {
                             <InputNumber min={1} />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3}>
 
                         <Form.Item
                             label="Direction:"
@@ -138,7 +107,7 @@ function SellApartment() {
                             <Input />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3} >
 
                         <Form.Item
                             label="Description:"
@@ -154,7 +123,7 @@ function SellApartment() {
                         </Form.Item>
                     </Col>
 
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3} >
 
                         <Form.Item
 
@@ -170,7 +139,7 @@ function SellApartment() {
                             <InputNumber min={1} />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3} >
 
                         <Form.Item
                             label="Number of bathroom:"
@@ -185,7 +154,7 @@ function SellApartment() {
                             <InputNumber min={0} />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3} >
 
                         <Form.Item
                             label="Number of bedroom:"
@@ -200,22 +169,7 @@ function SellApartment() {
                             <InputNumber min={0} />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
-
-                        <Form.Item
-                            label="Number of kitchen:"
-                            name="num_kitchen_room"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input the Number of your Kitchen room!',
-                                },
-                            ]}
-                        >
-                            <InputNumber min={0} />
-                        </Form.Item>
-                    </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3} >
 
                         <Form.Item
                             label="Number of livingroom:"
@@ -230,34 +184,7 @@ function SellApartment() {
                             <InputNumber min={0} />
                         </Form.Item>
                     </Col>
-                    <Col span={12} offset={6} >
-                        <Form.Item
-                            label="Upload"
-                            name="images"
-                            valuePropName="fileList"
-                            getValueFromEvent={normFile}
-                        >
-                            <Upload
-                                listType="picture-card"
-                                beforeUpload={beforeUpload}
-                                onPreview={onPreview}
-                                multiple
-                                onRemove={handleRemove}
-                                fileList={images.map((image, index) => ({
-                                    uid: index.toString(),
-                                    name: index.toString(),
-                                    status: 'done',
-                                    url: image,
-                                    thumbUrl: image,
-                                  }))}
-                            >
-                                <div>
-                                    <div style={{ marginTop: 8 }}>Upload</div>
-                                </div>
-                            </Upload>
-                        </Form.Item>
-                    </Col>
-                    <Col span={12} offset={6} >
+                    <Col span={18} offset={3}>
 
                         <Form.Item                        >
                             <Button type="primary" htmlType="submit">
@@ -267,7 +194,8 @@ function SellApartment() {
                     </Col>
                 </Row>
             </Form>
+        </Modal>
         </>
     )
 }
-export default SellApartment;
+export default EditApartment;

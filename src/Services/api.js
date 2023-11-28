@@ -24,6 +24,14 @@ export const getAllUsers = async () => {
     }
 }
 
+export const deleteUser = async (id) => {
+    try{
+        return await api.delete(URL_API + `users/${id}`);
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
 export const addApartment = async (values) => {
     try{
         return await api.post(URL_API + 'apartments', values)
@@ -32,9 +40,32 @@ export const addApartment = async (values) => {
     }
 }
 
+export const editApartment = async (id, values) => {
+    try{
+        return await api.put(URL_API + `apartments/${id}`, values)
+    } catch (error) {
+        throw Error(error);
+    }
+}
 export const getApartments = async () => {
     try{
         return await api.get(URL_API + 'home')
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
+export const getApartmentsbyUserID = async (userID) => {
+    try{
+        return await api.get(URL_API + `apartments/user/${userID}`)
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
+export const deleteApartment = async (id) => {
+    try{
+        return await api.delete(URL_API + `apartments/${id}`)
     } catch (error) {
         throw Error(error);
     }
@@ -65,3 +96,27 @@ export const getListRating = async () => {
     }
 }
 
+
+export const getAvgStar = async () => {
+    try{
+        return await api.get(URL_API + 'surveys/avg-star')
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
+export const getCountServey = async () => {
+    try{
+        return await api.get(URL_API + 'surveys/count-survey')
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
+export const getCountUser = async () => {
+    try{
+        return await api.get(URL_API + 'surveys/count-user')
+    } catch (error) {
+        throw Error(error);
+    }
+}

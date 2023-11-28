@@ -4,6 +4,7 @@ import { Button, Form, Input, Row, Col } from 'antd';
 import { LoginAPI } from '../../Services/api';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
+import Swal from 'sweetalert2';
 function Login() {
     const navigate = useNavigate();
     const token = localStorage.getItem('access_token');
@@ -23,7 +24,12 @@ function Login() {
             }
         }
         else {
-            alert('Wrong username or password!');
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed. Try again!',
+                showConfirmButton: false,
+                timer: 1500
+              })
             localStorage.clear();
         }
     };

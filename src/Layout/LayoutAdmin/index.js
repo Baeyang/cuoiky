@@ -9,6 +9,11 @@ const { Sider, Content } = Layout
 function LayoutAdmin() {
     const [collapsed, setCollapsed] = useState(false);
     const location = useLocation()
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate('/');
+    }
 
     return (
         <>
@@ -21,8 +26,8 @@ function LayoutAdmin() {
                             </Link>
                         </div>
                         <div className="Layout-Admin__icon">
-                            <Link to='logout'>
-                                <Button>  Đăng xuất </Button>
+                            <Link to='/'>
+                                <Button onClick={handleLogout}>  Đăng xuất </Button>
                             </Link>
                         </div>
                     </div>

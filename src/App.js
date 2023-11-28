@@ -11,6 +11,7 @@ import Rating from './Features/Rating';
 import HomeAdmin from './Features/HomeAdmin';
 import LayoutAdmin from './Layout/LayoutAdmin';
 import ManageUser from './Features/ManageUser';
+import UserManageApartment from './Features/UserManageApartment';
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
             <Route element={<PrivateRoute accessRole={['ADMIN','CUSTOMER']}></PrivateRoute >}>
               <Route path='/SellingApartment' element={<SellApartment />}></Route>
               <Route path='/Rating' element={<Rating />}></Route>
+              <Route path='ManageApartment' element={<UserManageApartment></UserManageApartment>}></Route>
             </Route>
 
           </Route>

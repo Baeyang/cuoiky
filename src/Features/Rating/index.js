@@ -71,7 +71,7 @@ function Rating() {
                             <Col offset={4}>
                                 <Form.Item                        >
                                     <Button type="primary" htmlType="submit">
-                                        LOGIN
+                                        SEND
                                     </Button>
                                 </Form.Item>
                             </Col>

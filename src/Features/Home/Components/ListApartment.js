@@ -18,7 +18,6 @@ function ListApartment(){
     console.log(ListApartments);
     return(
         <>
-            
                 <Row gutter={16} >
                 {ListApartments.map((item,index)=>{
                     return(

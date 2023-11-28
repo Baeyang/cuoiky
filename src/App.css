@@ -47,6 +47,11 @@ a:active {
 .ml-20{
   margin-left: 20px;
 }
+
+.action{
+  display: flex;
+justify-content: space-between;
+}
 @media (min-width: 1200px){
   .container{
     max-width: 1140px;

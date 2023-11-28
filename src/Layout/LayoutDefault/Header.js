@@ -43,6 +43,11 @@ function Header() {
                                     Đánh giá
                                     </NavLink>
                                 </li>
+                                <li>
+                                    <NavLink to='ManageApartment'>
+                                    Căn hộ đã đăng
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
                     </div>
