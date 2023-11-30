@@ -124,7 +124,7 @@ function BuyApartment() {
                         <Col span={12} offset={6} >
 
                             <Form.Item
-                                label="Số phòng khác:"
+                                label="Số phòng khách:"
                                 name="num_living_room"
                                 rules={[
                                     {
