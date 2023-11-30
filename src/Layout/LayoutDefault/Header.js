@@ -26,19 +26,19 @@ function Header() {
 
                                 <li>
                                     <NavLink to='/'>
-                                        Home
+                                        Trang chủ
                                     </NavLink>
                                 </li>
 
                                 <li>
                                 <NavLink to='BuyApartment'>
-                                    Tư vấn tìm Căn Hộ
+                                    Tìm Căn Hộ
                                     </NavLink>
 
                                 </li>
                                 <li>
                                     <NavLink to='SellingApartment'>
-                                    Tư vấn bán Căn Hộ
+                                    Bán Căn Hộ
                                     </NavLink>
                                 </li>
                                 <li>

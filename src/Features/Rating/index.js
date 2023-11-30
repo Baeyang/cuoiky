@@ -30,6 +30,9 @@ function Rating() {
     }
         return (
             <>
+            <h2 className='title-page'>
+                ĐÁNH GIÁ WEBSITE CỦA CHÚNG TÔI
+            </h2>
                 <div className="container">
                     <Form
                         layout="vertical"
@@ -41,12 +44,12 @@ function Rating() {
                         <Row>
                             <Col span={16} offset={4}>
                                 <Form.Item
-                                    label="Description:"
+                                    label="Lời nhắn:"
                                     name="description"
                                     rules={[
                                         {
                                             required: true,
-                                            message: 'Please input your description',
+                                            message: 'Vui lòng nhập lời nhắn',
                                         },
                                     ]}
                                 >
@@ -55,12 +58,12 @@ function Rating() {
                             </Col>
                             <Col span={16} offset={4}>
                                 <Form.Item
-                                    label="Your rating:"
+                                    label="Rating:"
                                     name="star"
                                     rules={[
                                         {
                                             required: true,
-                                            message: 'Please select rating',
+                                            message: 'Vui lòng đánh giá',
                                         },
                                     ]}
 
@@ -71,8 +74,7 @@ function Rating() {
                             <Col offset={4}>
                                 <Form.Item                        >
                                     <Button type="primary" htmlType="submit">
-                                        SEND
-                                    </Button>
+                                        Gửi </Button>
                                 </Form.Item>
                             </Col>
                         </Row>

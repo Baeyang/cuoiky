@@ -21,9 +21,11 @@ function LayoutAdmin() {
                 <div className="Layout-Admin__header">
                     <div className="Layout-Admin__header-inner">
                         <div className="Layout-Admin__logo">
-                            <Link to='/'>
-                                BATDONGSAN.COM
+                        <div className="header__logo">
+                            <Link to = '/'>
+                            <img src='https://staticfile.batdongsan.com.vn/images/logo/standard/red/logo.svg'></img>
                             </Link>
+                        </div>
                         </div>
                         <div className="Layout-Admin__icon">
                             <Link to='/'>

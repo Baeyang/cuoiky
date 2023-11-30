@@ -25,42 +25,42 @@ function UserManageApartment(){
 
     const columns = [
         {
-            title: 'Title:',
+            title: 'Tiêu đề:',
             dataIndex: 'title',
             key: 'title'
         },
         {
-            title: 'Address:',
+            title: 'Địa chỉ:',
             dataIndex: 'address',
             key: 'address'
         },
         {
-            title: 'Direction',
+            title: 'Hướng',
             dataIndex: 'direction',
             key: 'direction',
         },
         {
-            title: 'Price',
+            title: 'Giá',
             dataIndex: 'price',
             key: 'price'
         },
         {
-            title: 'BathRoom',
+            title: 'Số phòng tắm',
             dataIndex: 'num_bath_room',
             key: 'num_bath_room'
         },
         {
-            title: 'BedRoom',
+            title: 'Số phòng ngủ',
             dataIndex: 'num_bed_room',
             key: 'num_bed_room'
         },
         {
-            title: 'LivingRoom',
+            title: 'Số phòng khách',
             dataIndex: 'num_living_room',
             key: 'num_living_room'
         },
         {
-            title: 'Square',
+            title: 'Diện tích',
             dataIndex: 'square',
             key: 'square'
         },

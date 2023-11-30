@@ -72,6 +72,9 @@ function SellApartment() {
 
     return (
         <>
+        <h2 className='title-page'>
+            BÁN CĂN HỘ CỦA BẠN
+        </h2>
             <Form layout="vertical"
                 onFinish={onFinish}
                 initialValues={{
@@ -83,12 +86,12 @@ function SellApartment() {
                 <Row>
                 <Col span={12} offset={6} >
                         <Form.Item
-                            label="Title:"
+                            label="Tiêu đề:"
                             name="title"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input Title!',
+                                    message: 'Vui lòng nhập tiêu đề!',
                                 },
                             ]}
                         >
@@ -97,12 +100,12 @@ function SellApartment() {
                     </Col>
                     <Col span={12} offset={6} >
                         <Form.Item
-                            label="Address:"
+                            label="Địa chỉ:"
                             name="address"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input Address!',
+                                    message: 'Vui lòng nhập Địa chỉ!',
                                 },
                             ]}
                         >
@@ -111,12 +114,12 @@ function SellApartment() {
                     </Col>
                     <Col span={12} offset={6} >
                         <Form.Item
-                            label="Square:"
+                            label="Diện tích:"
                             name="square"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input square!',
+                                    message: 'Vui lòng nhập diện tích!',
                                 },
                             ]}
                         >
@@ -126,12 +129,12 @@ function SellApartment() {
                     <Col span={12} offset={6} >
 
                         <Form.Item
-                            label="Direction:"
+                            label="Hướng:"
                             name="direction"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input Direction!',
+                                    message: 'Vui lòng nhập hướng!',
                                 },
                             ]}
                         >
@@ -141,12 +144,12 @@ function SellApartment() {
                     <Col span={12} offset={6} >
 
                         <Form.Item
-                            label="Description:"
+                            label="Vui lòng nhập mô tả:"
                             name="description"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input Description!',
+                                    message: 'Vui lòng nhập mô tả!',
                                 },
                             ]}
                         >
@@ -158,12 +161,12 @@ function SellApartment() {
 
                         <Form.Item
 
-                            label="Price:"
+                            label="Giá:"
                             name="price"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input Price!',
+                                    message: 'Vui lòng nhập giá!',
                                 },
                             ]}
                         >
@@ -173,12 +176,12 @@ function SellApartment() {
                     <Col span={12} offset={6} >
 
                         <Form.Item
-                            label="Number of bathroom:"
+                            label="Số phòng tắm:"
                             name="num_bath_room"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input the Number of your bathroom!',
+                                    message: 'Vui lòng nhập số phòng!',
                                 },
                             ]}
                         >
@@ -188,12 +191,12 @@ function SellApartment() {
                     <Col span={12} offset={6} >
 
                         <Form.Item
-                            label="Number of bedroom:"
+                            label="Số phòng ngủ:"
                             name="num_bed_room"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input the Number of your bedroom!',
+                                    message: 'Vui lòng nhập số phòng!',
                                 },
                             ]}
                         >
@@ -203,12 +206,12 @@ function SellApartment() {
                     <Col span={12} offset={6} >
 
                         <Form.Item
-                            label="Number of kitchen:"
+                            label="Số phòng ăn:"
                             name="num_kitchen_room"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input the Number of your Kitchen room!',
+                                    message: 'Vui lòng nhập số phòng!',
                                 },
                             ]}
                         >
@@ -218,12 +221,12 @@ function SellApartment() {
                     <Col span={12} offset={6} >
 
                         <Form.Item
-                            label="Number of livingroom:"
+                            label="Số phòng khách:"
                             name="num_living_room"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input the Number of livingroom!',
+                                    message: 'Vui lòng nhập số phòng!',
                                 },
                             ]}
                         >
@@ -261,7 +264,7 @@ function SellApartment() {
 
                         <Form.Item                        >
                             <Button type="primary" htmlType="submit">
-                                SEND
+                                Gửi
                             </Button>
                         </Form.Item>
                     </Col>

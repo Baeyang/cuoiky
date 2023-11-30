@@ -36,21 +36,21 @@ function RatingStatistic() {
             <Col span={6}>
             <Card title='Users statistic' hoverable={true} headStyle={{ background: 'blue', color: 'white' }}>
                 <div>
-                    <strong>Total Users : {totalUser}</strong>
+                    <strong>Số lượng người gửi : {totalUser}</strong>
                 </div>
             </Card>
             </Col>
             <Col offset={3} span={6}>
             <Card title='Rating statistic' hoverable={true} headStyle={{ background: 'blue', color: 'white' }}>
                 <div>
-                    <strong>Average Rating : {avgStar}/5</strong>
+                    <strong>Đánh giá trung bình : {avgStar}/5</strong>
                 </div>
             </Card>
             </Col>
             <Col offset={3}  span={6}>
             <Card title='Survey statistic' hoverable={true} headStyle={{ background: 'blue', color: 'white' }}>
                 <div>
-                    <strong>Total Surveys : {totalServey}</strong>
+                    <strong>Tổng số đánh giá : {totalServey}</strong>
                 </div>
             </Card>
             </Col>

@@ -16,10 +16,10 @@ function ItemApartment(prop){
                 </div>
 
                 <div className="square mb-10">
-                    {item.square}
+                    Square: {item.square} m2
                 </div>
                 <div className="price mb-10">
-                    {item.price} đ
+                    Price: {item.price} đ
                 </div>
                 <div className="address">
                 <FontAwesomeIcon icon={faLocationDot} />

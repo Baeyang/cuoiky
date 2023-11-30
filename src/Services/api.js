@@ -40,7 +40,15 @@ export const addApartment = async (values) => {
     }
 }
 
-export const getSuggest = async (values) => {
+export const getMatchingResult = async (values) => {
+    try{
+        return await api.post(URL_API + 'home/top-matcher', values)
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
+export const getConsulting = async (values) => {
     try{
         return await api.post(URL_API + 'home/consulting', values)
     } catch (error) {
