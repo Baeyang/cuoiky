@@ -3,6 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 15px;
+    position: sticky;
+    top: 0;
 }
 .header{
     background-color: #fff;
@@ -43,7 +45,11 @@
     height: 438px;
     width: 100%;
     aspect-ratio: auto 1503 / 438;
-    background-image: url('https://file4.batdongsan.com.vn/Banners/HieuNM/HuongTT9/1920x560/20220321-1735/images/bg.jpg?1647858844036');
+    background-image: url('../../assets/images/pexels-aleksandar-pasaric-325185.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-image: url('https://file4.batdongsan.com.vn/Banners/HieuNM/HuongTT9/1920x560/20220321-1735/images/bg.jpg?1647858844036'); */
 }
 
 .main__content{
