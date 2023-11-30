@@ -5,7 +5,7 @@ import '../Login/login.css';
 import dayjs from 'dayjs';
 import { RegisterAPI } from '../../Services/api';
 import { jwtDecode } from "jwt-decode";
-
+import '../Login/login.css'
 function Register() {
     const navigate = useNavigate();
     const onFinish = async (values) => {
@@ -20,7 +20,7 @@ function Register() {
     }
     return (
         <>
-
+<div className='login'>
             <div className='login__form'>
                 <Form
                     layout="vertical"
@@ -122,6 +122,7 @@ function Register() {
 
                 </Form>
 
+            </div>
             </div>
         </>
     )
