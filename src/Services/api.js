@@ -40,6 +40,14 @@ export const addApartment = async (values) => {
     }
 }
 
+export const getSuggest = async (values) => {
+    try{
+        return await api.post(URL_API + 'home/consulting', values)
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
 export const editApartment = async (id, values) => {
     try{
         return await api.put(URL_API + `apartments/${id}`, values)

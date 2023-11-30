@@ -12,7 +12,7 @@ function Header() {
     }
     useEffect(()=>{
         setUserName(username);
-    },[username, handleLogout]);
+    },[username,() => handleLogout]);
     return (
         <>
             <div className="header">
@@ -31,7 +31,10 @@ function Header() {
                                 </li>
 
                                 <li>
+                                <NavLink to='BuyApartment'>
                                     Tư vấn tìm Căn Hộ
+                                    </NavLink>
+
                                 </li>
                                 <li>
                                     <NavLink to='SellingApartment'>

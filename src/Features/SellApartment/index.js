@@ -116,7 +116,7 @@ function SellApartment() {
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input Address!',
+                                    message: 'Please input square!',
                                 },
                             ]}
                         >
